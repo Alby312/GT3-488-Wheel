@@ -1,0 +1,2064 @@
+[
+  {
+    "Name": "INCLUDE_TM1638",
+    "Type": "autodefine",
+    "Condition": "[TM1638_ENABLEDMODULES]>0"
+  },
+  {
+    "Name": "INCLUDE_WS2801",
+    "Type": "autodefine",
+    "Condition": "[WS2801_RGBLEDCOUNT]>0"
+  },
+  {
+    "Name": "INCLUDE_WS2812B",
+    "Type": "autodefine",
+    "Condition": "[WS2812B_RGBLEDCOUNT]>0"
+  },
+  {
+    "Name": "INCLUDE_PL9823",
+    "Type": "autodefine",
+    "Condition": "[PL9823_RGBLEDCOUNT]>0"
+  },
+  {
+    "Name": "INCLUDE_WS2812B_MATRIX",
+    "Type": "autodefine",
+    "Condition": "[WS2812B_MATRIX_ENABLED]>0"
+  },
+  {
+    "Name": "INCLUDE_LEDBACKPACK",
+    "Type": "autodefine",
+    "Condition": "[ENABLE_ADA_HT16K33_7SEGMENTS]>0 || [ENABLE_ADA_HT16K33_BiColorMatrix]>0"
+  },
+  {
+    "Name": "INCLUDE_TM1637",
+    "Type": "autodefine",
+    "Condition": "[TM1637_ENABLEDMODULES]>0"
+  },
+  {
+    "Name": "INCLUDE_I2CLCD",
+    "Type": "autodefine",
+    "Condition": "[I2CLCD_enabled]>0"
+  },
+  {
+    "Name": "INCLUDE_NOKIALCD",
+    "Type": "autodefine",
+    "Condition": "[ENABLED_NOKIALCD]>0"
+  },
+  {
+    "Name": "INCLUDE_OLED",
+    "Type": "autodefine",
+    "Condition": "[ENABLED_OLEDLCD]>0"
+  },
+  {
+    "Name": "INCLUDE_MAX7221MATRIX",
+    "Type": "autodefine",
+    "Condition": "[MAX7221_MATRIX_ENABLED]>0"
+  },
+  {
+    "Name": "INCLUDE_HT16K33_SINGLECOLORMATRIX",
+    "Type": "autodefine",
+    "Condition": "[ENABLE_ADA_HT16K33_SingleColorMatrix]>0"
+  },
+  {
+    "Name": "INCLUDE_74HC595_GEAR_DISPLAY",
+    "Type": "autodefine",
+    "Condition": "[ENABLE_74HC595_GEAR_DISPLAY]>0"
+  },
+  {
+    "Name": "INCLUDE_MAX7221_MODULES",
+    "Type": "autodefine",
+    "Condition": "[MAX7221_ENABLEDMODULES]>0"
+  },
+  {
+    "Name": "INCLUDE_6c595_GEAR_DISPLAY ",
+    "Type": "autodefine",
+    "Condition": "[ENABLE_6C595_GEAR_DISPLAY]>0"
+  },
+  {
+    "Name": "INCLUDE_TACHOMETER ",
+    "Type": "autodefine",
+    "Condition": "[ENABLE_TACHOMETER]>0"
+  },
+  {
+    "Name": "INCLUDE_BOOSTGAUGE ",
+    "Type": "autodefine",
+    "Condition": "[ENABLE_BOOSTGAUGE]>0"
+  },
+  {
+    "Name": "INCLUDE_SPEEDOGAUGE",
+    "Type": "autodefine",
+    "Condition": "[ENABLE_SPEEDOGAUGE]>0"
+  },
+  {
+    "Name": "INCLUDE_FUELGAUGE ",
+    "Type": "autodefine",
+    "Condition": "[ENABLE_FUELGAUGE]>0"
+  },
+  {
+    "Name": "INCLUDE_TEMPGAUGE ",
+    "Type": "autodefine",
+    "Condition": "[ENABLE_TEMPGAUGE]>0"
+  },
+  {
+    "Name": "INCLUDE_CONSGAUGE ",
+    "Type": "autodefine",
+    "Condition": "[ENABLE_CONSGAUGE]>0"
+  },
+  {
+    "Name": "INCLUDE_SHAKEITADASHIELD ",
+    "Type": "autodefine",
+    "Condition": "[ADAMOTORS_SHIELDSCOUNT]>0"
+  },
+  {
+    "Name": "INCLUDE_SHAKEITDKSHIELD ",
+    "Type": "autodefine",
+    "Condition": "[DKMOTOR_SHIELDSCOUNT]>0"
+  },
+  {
+    "Name": "INCLUDE_SHAKEITL298N",
+    "Type": "autodefine",
+    "Condition": "[L98NMOTORS_ENABLED]>0"
+  },
+  {
+    "Name": "INCLUDE_SHAKEITMOTOMONSTER",
+    "Type": "autodefine",
+    "Condition": "[MOTOMONSTER_ENABLED]>0"
+  },
+  {
+    "Name": "INCLUDE_SHAKEITPWM",
+    "Type": "autodefine",
+    "Condition": "[SHAKEITPWM_ENABLED_MOTORS]>0"
+  },
+  {
+    "Name": "INCLUDE_SHAKEITPWMFANS",
+    "Type": "autodefine",
+    "Condition": "[SHAKEITPWMFANS_ENABLED_MOTORS]>0"
+  },
+  {
+    "Name": "INCLUDE_GAMEPAD",
+    "Type": "autodefine",
+    "Condition": "[ENABLE_MICRO_GAMEPAD]>0"
+  },
+  {
+    "Name": "INCLUDE_ENCODERS",
+    "Type": "autodefine",
+    "Condition": "[ENABLED_ENCODERS_COUNT]>0"
+  },
+  {
+    "Name": "INCLUDE_BUTTONS",
+    "Type": "autodefine",
+    "Condition": "[ENABLED_BUTTONS_COUNT]>0"
+  },
+  {
+    "Name": "INCLUDE_BUTTONMATRIX",
+    "Type": "autodefine",
+    "Condition": "[ENABLED_BUTTONMATRIX]>0"
+  },
+  {
+    "Group": "General",
+    "Name": "DEVICE_NAME",
+    "Title": "Device name,\r\n make sure to use a unique name when using multiple arduinos",
+    "DefaultValue": "SimHub Dash",
+    "Type": "string",
+    "Template": "#define DEVICE_NAME \"{0}\"",
+    "Value": "SimHub Dash"
+  },
+  {
+    "Group": "GAMEPAD",
+    "Name": "ENABLE_MICRO_GAMEPAD",
+    "Title": "Enable arduino micro gamepad output for all the activated buttons/encoders",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "1"
+  },
+  {
+    "Group": "GAMEPAD",
+    "Name": "MICRO_GAMEPAD_ENCODERPRESSTIME",
+    "Title": "Define how long (in milliseconds) the encoder related button will be hold after an encoder movement",
+    "DefaultValue": "50",
+    "Type": "int",
+    "Value": "50",
+    "Condition": "ENABLE_MICRO_GAMEPAD>0",
+    "Max": 100
+  },
+  {
+    "Group": "TM1638 7 Segments Modules",
+    "Name": "TM1638_ENABLEDMODULES",
+    "Title": "TM1638 modules connected",
+    "DefaultValue": "0",
+    "Type": "int",
+    "Value": "0",
+    "Max": 6
+  },
+  {
+    "Group": "TM1638 7 Segments Modules",
+    "Name": "TM1638_SWAPLEDCOLORS",
+    "Title": "Reverse Red and green colors ",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "TM1638_ENABLEDMODULES > 0"
+  },
+  {
+    "Group": "TM1638 7 Segments Modules",
+    "Name": "TM1638_DIO",
+    "Title": "Common data (DIO) digital pin number",
+    "DefaultValue": "8",
+    "Type": "pin;TM1638 DIO",
+    "Value": "8",
+    "Condition": "TM1638_ENABLEDMODULES > 0"
+  },
+  {
+    "Group": "TM1638 7 Segments Modules",
+    "Name": "TM1638_CLK",
+    "Title": "Common clock (CLK) digital pin number",
+    "DefaultValue": "7",
+    "Type": "pin;TM1638 CLK",
+    "Value": "7",
+    "Condition": "TM1638_ENABLEDMODULES > 0"
+  },
+  {
+    "Group": "TM1638 7 Segments Modules",
+    "Name": "TM1638_STB1",
+    "Title": "1st module strobe (STB0) digital pin number",
+    "DefaultValue": "9",
+    "Type": "pin;TM1638 STB1",
+    "Value": "9",
+    "Condition": "TM1638_ENABLEDMODULES > 0"
+  },
+  {
+    "Group": "TM1638 7 Segments Modules",
+    "Name": "TM1638_STB2",
+    "Title": "2d module strobe (STB1) digital pin number",
+    "DefaultValue": "10",
+    "Type": "pin;TM1638 STB2",
+    "Value": "10",
+    "Condition": "TM1638_ENABLEDMODULES > 1"
+  },
+  {
+    "Group": "TM1638 7 Segments Modules",
+    "Name": "TM1638_STB3",
+    "Title": "3rd module strobe (STB2) digital pin number",
+    "DefaultValue": "11",
+    "Type": "pin;TM1638 STB3",
+    "Value": "11",
+    "Condition": "TM1638_ENABLEDMODULES > 2"
+  },
+  {
+    "Group": "TM1638 7 Segments Modules",
+    "Name": "TM1638_STB4",
+    "Title": "4th module strobe (STB3) digital pin number",
+    "DefaultValue": "12",
+    "Type": "pin;TM1638 STB4",
+    "Value": "12",
+    "Condition": "TM1638_ENABLEDMODULES > 3"
+  },
+  {
+    "Group": "TM1638 7 Segments Modules",
+    "Name": "TM1638_STB5",
+    "Title": "5th module strobe (STB4) digital pin number",
+    "DefaultValue": "0",
+    "Type": "pin;TM1638 STB5",
+    "Value": "0",
+    "Condition": "TM1638_ENABLEDMODULES > 4"
+  },
+  {
+    "Group": "TM1638 7 Segments Modules",
+    "Name": "TM1638_STB6",
+    "Title": "6th module strobe (STB5) digital pin number",
+    "DefaultValue": "0",
+    "Type": "pin;TM1638 STB6",
+    "Value": "0",
+    "Condition": "TM1638_ENABLEDMODULES > 5"
+  },
+  {
+    "Group": "TM1637 7 Segment Modules",
+    "Name": "TM1637_ENABLEDMODULES",
+    "Title": "TM1637 modules connected",
+    "DefaultValue": "0",
+    "Type": "int",
+    "Value": "0",
+    "Max": 8
+  },
+  {
+    "Group": "TM1637 7 Segment Modules",
+    "Name": "TM1637_DIO1",
+    "Title": "1st TM1637 DIO digital pin number",
+    "DefaultValue": "4",
+    "Type": "pin;TM1637 #1 DIO",
+    "Value": "4",
+    "Condition": "TM1637_ENABLEDMODULES >=1"
+  },
+  {
+    "Group": "TM1637 7 Segment Modules",
+    "Name": "TM1637_CLK1",
+    "Title": "1st TM1637 CLK digital pin number",
+    "DefaultValue": "3",
+    "Type": "pin;TM1637 #1 CLK",
+    "Value": "3",
+    "Condition": "TM1637_ENABLEDMODULES >=1"
+  },
+  {
+    "Group": "TM1637 7 Segment Modules",
+    "Name": "TM1637_DIO2",
+    "Title": "2nd TM1637 DIO digital pin number",
+    "DefaultValue": "4",
+    "Type": "pin;TM1637 #2 DIO",
+    "Value": "4",
+    "Condition": "TM1637_ENABLEDMODULES >=2"
+  },
+  {
+    "Group": "TM1637 7 Segment Modules",
+    "Name": "TM1637_CLK2",
+    "Title": "2nd TM1637 CLK digital pin number",
+    "DefaultValue": "3",
+    "Type": "pin;TM1637 #2 CLK",
+    "Value": "3",
+    "Condition": "TM1637_ENABLEDMODULES >=2"
+  },
+  {
+    "Group": "TM1637 7 Segment Modules",
+    "Name": "TM1637_DIO3",
+    "Title": "3rd TM1637 DIO digital pin number",
+    "DefaultValue": "4",
+    "Type": "pin;TM1637 #3 DIO",
+    "Value": "4",
+    "Condition": "TM1637_ENABLEDMODULES >=3"
+  },
+  {
+    "Group": "TM1637 7 Segment Modules",
+    "Name": "TM1637_CLK3",
+    "Title": "3rd TM1637 CLK digital pin number",
+    "DefaultValue": "3",
+    "Type": "pin;TM1637 #3 CLK",
+    "Value": "3",
+    "Condition": "TM1637_ENABLEDMODULES >=3"
+  },
+  {
+    "Group": "TM1637 7 Segment Modules",
+    "Name": "TM1637_DIO4",
+    "Title": "4th TM1637 DIO digital pin number",
+    "DefaultValue": "4",
+    "Type": "pin;TM1637 #4 DIO",
+    "Value": "4",
+    "Condition": "TM1637_ENABLEDMODULES >=4"
+  },
+  {
+    "Group": "TM1637 7 Segment Modules",
+    "Name": "TM1637_CLK4",
+    "Title": "4th TM1637 CLK digital pin number",
+    "DefaultValue": "3",
+    "Type": "pin;TM1637 #4 CLK",
+    "Value": "3",
+    "Condition": "TM1637_ENABLEDMODULES >=4"
+  },
+  {
+    "Group": "TM1637 7 Segment Modules",
+    "Name": "TM1637_DIO5",
+    "Title": "5th TM1637 DIO digital pin number",
+    "DefaultValue": "4",
+    "Type": "pin;TM1637 #5 DIO",
+    "Value": "4",
+    "Condition": "TM1637_ENABLEDMODULES >=5"
+  },
+  {
+    "Group": "TM1637 7 Segment Modules",
+    "Name": "TM1637_CLK5",
+    "Title": "5th TM1637 CLK digital pin number",
+    "DefaultValue": "3",
+    "Type": "pin;TM1637 #5 CLK",
+    "Value": "3",
+    "Condition": "TM1637_ENABLEDMODULES >=5"
+  },
+  {
+    "Group": "TM1637 7 Segment Modules",
+    "Name": "TM1637_DIO6",
+    "Title": "6th TM1637 DIO digital pin number",
+    "DefaultValue": "4",
+    "Type": "pin;TM1637 #6 DIO",
+    "Value": "4",
+    "Condition": "TM1637_ENABLEDMODULES >=6"
+  },
+  {
+    "Group": "TM1637 7 Segment Modules",
+    "Name": "TM1637_CLK6",
+    "Title": "6th TM1637 CLK digital pin number",
+    "DefaultValue": "3",
+    "Type": "pin;TM1637 #6 CLK",
+    "Value": "3",
+    "Condition": "TM1637_ENABLEDMODULES >=6"
+  },
+  {
+    "Group": "TM1637 7 Segment Modules",
+    "Name": "TM1637_DIO7",
+    "Title": "7th TM1637 DIO digital pin number",
+    "DefaultValue": "4",
+    "Type": "pin;TM1637 #7 DIO",
+    "Value": "4",
+    "Condition": "TM1637_ENABLEDMODULES >=7"
+  },
+  {
+    "Group": "TM1637 7 Segment Modules",
+    "Name": "TM1637_CLK7",
+    "Title": "7th TM1637 CLK digital pin number",
+    "DefaultValue": "3",
+    "Type": "pin;TM1637 #7 CLK",
+    "Value": "3",
+    "Condition": "TM1637_ENABLEDMODULES >=7"
+  },
+  {
+    "Group": "TM1637 7 Segment Modules",
+    "Name": "TM1637_DIO8",
+    "Title": "8th TM1637 DIO digital pin number",
+    "DefaultValue": "4",
+    "Type": "pin;TM1637 #8 DIO",
+    "Value": "4",
+    "Condition": "TM1637_ENABLEDMODULES >=8"
+  },
+  {
+    "Group": "TM1637 7 Segment Modules",
+    "Name": "TM1637_CLK8",
+    "Title": "8th TM1637 CLK digital pin number",
+    "DefaultValue": "3",
+    "Type": "pin;TM1637 #8 CLK",
+    "Value": "3",
+    "Condition": "TM1637_ENABLEDMODULES >=8"
+  },
+  {
+    "Group": "MAX7221 7 Segments Modules",
+    "Name": "MAX7221_ENABLEDMODULES",
+    "Title": "MAX7219 / MAX7221 7 Segment modules connected \r\nMultiple modules can be cascaded connected module output to next module input",
+    "DefaultValue": "0",
+    "Type": "int",
+    "Value": "0",
+    "Max": 8
+  },
+  {
+    "Group": "MAX7221 7 Segments Modules",
+    "Name": "MAX7221_DATA",
+    "Title": "DATA (DIN) digital pin number",
+    "DefaultValue": "3",
+    "Type": "pin;MAX7221 7seg. DATA",
+    "Value": "3",
+    "Condition": "MAX7221_ENABLEDMODULES > 0"
+  },
+  {
+    "Group": "MAX7221 7 Segments Modules",
+    "Name": "MAX7221_CLK",
+    "Title": "CLOCK (CLK) digital pin number",
+    "DefaultValue": "5",
+    "Type": "pin;MAX7221 7seg. CLK",
+    "Value": "5",
+    "Condition": "MAX7221_ENABLEDMODULES > 0"
+  },
+  {
+    "Group": "MAX7221 7 Segments Modules",
+    "Name": "MAX7221_LOAD",
+    "Title": "LOAD (LD) digital pin number",
+    "DefaultValue": "4",
+    "Type": "pin;MAX7221 7seg. LOAD/LD",
+    "Value": "4",
+    "Condition": "MAX7221_ENABLEDMODULES > 0"
+  },
+  {
+    "Group": "MAX7221 Led Matrix",
+    "Name": "MAX7221_MATRIX_ENABLED",
+    "Title": "MAX7221 led matrix enabled ",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0"
+  },
+  {
+    "Group": "MAX7221 Led Matrix",
+    "Name": "MAX7221_MATRIX_DATA",
+    "Title": "DATA (DIN) digital pin number",
+    "DefaultValue": "3",
+    "Type": "pin;MAX7221 Matrix DATA",
+    "Value": "3",
+    "Condition": "MAX7221_MATRIX_ENABLED>0"
+  },
+  {
+    "Group": "MAX7221 Led Matrix",
+    "Name": "MAX7221_MATRIX_CLK",
+    "Title": "CLOCK (CLK) digital pin number",
+    "DefaultValue": "5",
+    "Type": "pin;MAX7221 Matrix CLK",
+    "Value": "5",
+    "Condition": "MAX7221_MATRIX_ENABLED>0"
+  },
+  {
+    "Group": "MAX7221 Led Matrix",
+    "Name": "MAX7221_MATRIX_LOAD",
+    "Title": "LOAD (LD/CS) digital pin number",
+    "DefaultValue": "4",
+    "Type": "pin;MAX7221 Matrix LOAD/LD",
+    "Value": "4",
+    "Condition": "MAX7221_MATRIX_ENABLED>0"
+  },
+  {
+    "Group": "HT16K33 Single Color Matrix",
+    "Name": "ENABLE_ADA_HT16K33_SingleColorMatrix",
+    "Title": "Adafruit HT16K33 single color matrix display enabled",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Pins": "nano:18,HT16K33 SC MATRIX DAT;19,HT16K33 SC MATRIX CLK|uno:18,HT16K33 SC MATRIX DAT;19,HT16K33 SC MATRIX CLK"
+  },
+  {
+    "Group": "HT16K33 Single Color Matrix",
+    "Name": "ADA_HT16K33_SINGLECOLORMATRIX_I2CADDRESS",
+    "Title": "Adafruit HT16K33 single color matrix matrix I2C address",
+    "DefaultValue": "0x70",
+    "Type": "hex",
+    "Value": "0x70",
+    "Condition": "ENABLE_ADA_HT16K33_SingleColorMatrix>0"
+  },
+  {
+    "Group": "WS2812B RGB Leds",
+    "Name": "WS2812B_RGBLEDCOUNT",
+    "Title": "WS2812B RGB leds count",
+    "DefaultValue": "0",
+    "Type": "int",
+    "Value": "0",
+    "Max": 150
+  },
+  {
+    "Group": "WS2812B RGB Leds",
+    "Name": "WS2812B_DATAPIN",
+    "Title": "Data (DIN) digital pin number",
+    "DefaultValue": "6",
+    "Type": "pin;WS2812B LEDS DATA",
+    "Value": "6",
+    "Condition": "WS2812B_RGBLEDCOUNT>0"
+  },
+  {
+    "Group": "WS2812B RGB Leds",
+    "Name": "WS2812B_RGBENCODING",
+    "Title": "WS2812B RGB encoding\r\nSet to 0 for GRB, 1 for RGB encoding, 2 for BRG encoding",
+    "DefaultValue": "0",
+    "Type": "list",
+    "Value": "0",
+    "Condition": "WS2812B_RGBLEDCOUNT>0",
+    "ListValues": "0,GRB encoding;1,RGB encoding;2,BRG encoding"
+  },
+  {
+    "Group": "WS2812B RGB Leds",
+    "Name": "WS2812B_RIGHTTOLEFT",
+    "Title": "Reverse led order ",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "WS2812B_RGBLEDCOUNT>0"
+  },
+  {
+    "Group": "WS2812B RGB Leds",
+    "Name": "WS2812B_TESTMODE",
+    "Title": "TESTING MODE : Light up all configured leds (in red color) at arduino startup\r\nIt will clear after simhub connection",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "WS2812B_RGBLEDCOUNT>0"
+  },
+  {
+    "Group": "PL9823 RGB Leds",
+    "Name": "PL9823_RGBLEDCOUNT",
+    "Title": "PL9823 RGB leds count",
+    "DefaultValue": "0",
+    "Type": "int",
+    "Value": "0",
+    "Max": 150
+  },
+  {
+    "Group": "PL9823 RGB Leds",
+    "Name": "PL9823_DATAPIN",
+    "Title": "Data (DIN) digital pin number",
+    "DefaultValue": "6",
+    "Type": "pin;PL9823 DATA",
+    "Value": "6",
+    "Condition": "PL9823_RGBLEDCOUNT>0"
+  },
+  {
+    "Group": "PL9823 RGB Leds",
+    "Name": "PL9823_RIGHTTOLEFT",
+    "Title": "Reverse led order",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "PL9823_RGBLEDCOUNT>0"
+  },
+  {
+    "Group": "PL9823 RGB Leds",
+    "Name": "PL9823_TESTMODE",
+    "Title": "TESTING MODE : Light up all configured leds (in red color) at arduino startup\r\nIt will clear after simhub connection",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "PL9823_RGBLEDCOUNT>0"
+  },
+  {
+    "Group": "WS2801 RGB Leds",
+    "Name": "WS2801_RGBLEDCOUNT",
+    "Title": "WS2801 RGB leds count",
+    "DefaultValue": "0",
+    "Type": "int",
+    "Value": "0",
+    "Max": 150
+  },
+  {
+    "Group": "WS2801 RGB Leds",
+    "Name": "WS2801_RIGHTTOLEFT",
+    "Title": "WS2801 right to left",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "WS2801_RGBLEDCOUNT>0"
+  },
+  {
+    "Group": "WS2801 RGB Leds",
+    "Name": "WS2801_DATAPIN",
+    "Title": "Data (DIN) digital pin number",
+    "DefaultValue": "5",
+    "Type": "pin;WS2801 DATA",
+    "Value": "5",
+    "Condition": "WS2801_RGBLEDCOUNT>0"
+  },
+  {
+    "Group": "WS2801 RGB Leds",
+    "Name": "WS2801_CLOCKPIN",
+    "Title": "Clock (CLK) digital pin number",
+    "DefaultValue": "6",
+    "Type": "pin;WS2801 CLOCK",
+    "Value": "6",
+    "Condition": "WS2801_RGBLEDCOUNT>0"
+  },
+  {
+    "Group": "WS2801 RGB Leds",
+    "Name": "WS2801_TESTMODE",
+    "Title": "TESTING MODE : Light up all configured leds (in red color) at arduino startup\r\nIt will clear after simhub connection",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "WS2801_RGBLEDCOUNT>0"
+  },
+  {
+    "Group": "WS2812B Matrix",
+    "Name": "WS2812B_MATRIX_ENABLED",
+    "Title": "DEPRECATED, DO NOT USE",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0"
+  },
+  {
+    "Group": "WS2812B Matrix",
+    "Name": "WS2812B_MATRIX_DATAPIN",
+    "Title": "Data (DIN) digital pin number",
+    "DefaultValue": "6",
+    "Type": "pin;WS2812B Matrix data",
+    "Value": "6",
+    "Condition": "WS2812B_MATRIX_ENABLED>0"
+  },
+  {
+    "Group": "20x4 I2C LCD",
+    "Name": "I2CLCD_enabled",
+    "Title": "I2C LCD (2004) enabled\r\nUno, Ethernet, Nano : A4(SDA), A5(SCL)\r\nMega2560 : 20 (SDA), 21 (SCL)\r\nLeonardo : 2 (SDA), 3 (SCL)\r\nDue : 20 (SDA), 21 (SCL), SDA1, SCL1",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Pins": "nano:18,I2C LCD SDA;19,I2C LCD SCL|uno:18,I2C LCD SDA;19,I2C LCD SCL"
+  },
+  {
+    "Group": "20x4 I2C LCD",
+    "Name": "I2CLCD_size",
+    "Title": "LCD size",
+    "DefaultValue": "0",
+    "Type": "list",
+    "Value": "0",
+    "Condition": "I2CLCD_enabled>0",
+    "ListValues": "0,20x4;1,16x2"
+  },
+  {
+    "Group": "20x4 I2C LCD",
+    "Name": "I2CLCD_ADDRESS",
+    "Title": "I2C address (0x30, 0x27 ... )",
+    "DefaultValue": "0x3f",
+    "Type": "hex",
+    "Value": "0x3f",
+    "Condition": "I2CLCD_enabled>0"
+  },
+  {
+    "Group": "20x4 I2C LCD",
+    "Name": "I2CLCD_LIBRARY",
+    "Title": "I2C library",
+    "DefaultValue": "0",
+    "Type": "list",
+    "Value": "0",
+    "Condition": "I2CLCD_enabled>0",
+    "ListValues": "0,PCF8574AT (DFRobot);1,PCF8574T"
+  },
+  {
+    "Group": "20x4 I2C LCD",
+    "Name": "I2CLCD_TEST",
+    "Title": "TESTING MODE : Show hello world at startup",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "I2CLCD_enabled>0"
+  },
+  {
+    "Group": "20x4 I2C LCD",
+    "Name": "I2CLCD_20x4",
+    "Type": "autodefine",
+    "Condition": "[I2CLCD_size]=0"
+  },
+  {
+    "Group": "20x4 I2C LCD",
+    "Name": "I2CLCD_16x2",
+    "Type": "autodefine",
+    "Condition": "[I2CLCD_size]=1"
+  },
+  {
+    "Group": "20x4 I2C LCD",
+    "Name": "I2CLCD_PCF8574AT",
+    "Type": "autodefine",
+    "Condition": "[I2CLCD_LIBRARY]=0"
+  },
+  {
+    "Group": "20x4 I2C LCD",
+    "Name": "I2CLCD_PCF8574T",
+    "Type": "autodefine",
+    "Condition": "[I2CLCD_LIBRARY]=1"
+  },
+  {
+    "Group": "HT16K33 7 Segments Module",
+    "Name": "ENABLE_ADA_HT16K33_7SEGMENTS",
+    "Title": "Adafruit HT16K33 7 segments display enabled",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Pins": "nano:18,HT16K33 7SEG DAT;19,HT16K33 7SEG CLK|uno:18,HT16K33 7SEG DAT;19,HT16K33 7SEG CLK"
+  },
+  {
+    "Group": "HT16K33 Bi Color Matrix",
+    "Name": "ENABLE_ADA_HT16K33_BiColorMatrix",
+    "Title": "Adafruit HT16K33 Bicolor matrix display enabled",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Pins": "nano:18,HT16K33 MATRIX DAT;19,HT16K33 MATRIX CLK|uno:18,HT16K33 MATRIX DAT;19,HT16K33 MATRIX CLK"
+  },
+  {
+    "Group": "HT16K33 Bi Color Matrix",
+    "Name": "ADA_HT16K33_BICOLORMATRIX_I2CADDRESS",
+    "Title": "Adafruit HT16K33 Bicolor matrix matrix I2C address",
+    "DefaultValue": "0x70",
+    "Type": "hex",
+    "Value": "0x70",
+    "Condition": "ENABLE_ADA_HT16K33_SingleColorMatrix>0"
+  },
+  {
+    "Group": "Tachometer",
+    "Name": "ENABLE_TACHOMETER",
+    "Title": "After market tachometer enabled\r\nSee wiki for wiring instructions",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0"
+  },
+  {
+    "Group": "Tachometer",
+    "Name": "TACHOMETER_PIN",
+    "Title": "Tachometer signal pin",
+    "DefaultValue": "9",
+    "Type": "pin;Tachometer signal",
+    "Value": "9",
+    "Condition": "ENABLE_TACHOMETER > 0 "
+  },
+  {
+    "Group": "Speedometer",
+    "Name": "ENABLE_SPEEDOGAUGE",
+    "Title": "After market Speedo gauge enabled\r\nSee wiki for wiring instructions",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0"
+  },
+  {
+    "Group": "Speedometer",
+    "Name": "SPEEDO_PIN",
+    "Title": "Speedometer signal pin",
+    "DefaultValue": "4",
+    "Type": "pin;Speedometer signal",
+    "Template": "",
+    "Value": "4",
+    "Condition": "ENABLE_SPEEDOGAUGE >0"
+  },
+  {
+    "Group": "Boost Gauge",
+    "Name": "ENABLE_BOOSTGAUGE",
+    "Title": "After market boost gauge enabled\r\nSee wiki for wiring instructions",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0"
+  },
+  {
+    "Group": "Boost Gauge",
+    "Name": "BOOST_PIN",
+    "Title": "Boost pwm pin",
+    "DefaultValue": "5",
+    "Type": "pin;Boost signal",
+    "Value": "5",
+    "Condition": "ENABLE_BOOSTGAUGE >0"
+  },
+  {
+    "Group": "Water Temperature Gauge",
+    "Name": "ENABLE_TEMPGAUGE",
+    "Title": "After market temperature gauge enabled\r\n(TESTED ON BMW E36 CLUSTER, OTHER USES MAY NOT WORK, SEE WIKI)",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0"
+  },
+  {
+    "Group": "Water Temperature Gauge",
+    "Name": "TEMP_PIN",
+    "Title": "TEMP pwm pin",
+    "DefaultValue": "5",
+    "Type": "pin;Temperature signal",
+    "Value": "5",
+    "Condition": "ENABLE_TEMPGAUGE >0"
+  },
+  {
+    "Group": "Fuel Gauge",
+    "Name": "ENABLE_FUELGAUGE",
+    "Title": "After market fuel gauge enabled\r\nSee wiki for wiring instructions",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0"
+  },
+  {
+    "Group": "Fuel Gauge",
+    "Name": "FUEL_PIN",
+    "Title": "FUEL pwm pin",
+    "DefaultValue": "5",
+    "Type": "pin;Fuel signal",
+    "Value": "5",
+    "Condition": "ENABLE_FUELGAUGE >0"
+  },
+  {
+    "Group": "Consumption Gauge",
+    "Name": "ENABLE_CONSGAUGE",
+    "Title": "After market consommation gauge enabled\r\n(DO NOT USE, NOT WORKING YET)",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0"
+  },
+  {
+    "Group": "Consumption Gauge",
+    "Name": "CONS_PIN",
+    "Title": "CONS pwm pin",
+    "DefaultValue": "5",
+    "Type": "pin;Consommation signal",
+    "Value": "5",
+    "Condition": "ENABLE_CONSGAUGE >0"
+  },
+  {
+    "Group": "Additional Buttons",
+    "Name": "ENABLED_BUTTONS_COUNT",
+    "Title": "Additional buttons (directly connected to the arduino, 12 max) buttons count",
+    "DefaultValue": "0",
+    "Type": "int",
+    "Value": "0",
+    "Max": 12
+  },
+  {
+    "Group": "Additional Buttons",
+    "Name": "BUTTON_PIN_1",
+    "Title": "1'st Additional button digital pin",
+    "DefaultValue": "3",
+    "Type": "pin;Button 1",
+    "Value": "4",
+    "Condition": "ENABLED_BUTTONS_COUNT>=1"
+  },
+  {
+    "Group": "Additional Buttons",
+    "Name": "BUTTON_PIN_2",
+    "Title": "2'nd Additional button digital pin",
+    "DefaultValue": "3",
+    "Type": "pin;Button 2",
+    "Value": "5",
+    "Condition": "ENABLED_BUTTONS_COUNT>=2"
+  },
+  {
+    "Group": "Additional Buttons",
+    "Name": "BUTTON_PIN_3",
+    "Title": "3'rd Additional button digital pin",
+    "DefaultValue": "3",
+    "Type": "pin;Button 3",
+    "Value": "6",
+    "Condition": "ENABLED_BUTTONS_COUNT>=3"
+  },
+  {
+    "Group": "Additional Buttons",
+    "Name": "BUTTON_PIN_4",
+    "Title": "4'th Additional button digital pin",
+    "DefaultValue": "3",
+    "Type": "pin;Button 4",
+    "Value": "7",
+    "Condition": "ENABLED_BUTTONS_COUNT>=4"
+  },
+  {
+    "Group": "Additional Buttons",
+    "Name": "BUTTON_PIN_5",
+    "Title": "5'th Additional button digital pin",
+    "DefaultValue": "3",
+    "Type": "pin;Button 5",
+    "Value": "8",
+    "Condition": "ENABLED_BUTTONS_COUNT>=5"
+  },
+  {
+    "Group": "Additional Buttons",
+    "Name": "BUTTON_PIN_6",
+    "Title": "6'th Additional button digital pin",
+    "DefaultValue": "3",
+    "Type": "pin;Button 6",
+    "Value": "9",
+    "Condition": "ENABLED_BUTTONS_COUNT>=6"
+  },
+  {
+    "Group": "Additional Buttons",
+    "Name": "BUTTON_PIN_7",
+    "Title": "7'th Additional button digital pin",
+    "DefaultValue": "3",
+    "Type": "pin;Button 7",
+    "Value": "10",
+    "Condition": "ENABLED_BUTTONS_COUNT>=7"
+  },
+  {
+    "Group": "Additional Buttons",
+    "Name": "BUTTON_PIN_8",
+    "Title": "8'th Additional button digital pin",
+    "DefaultValue": "3",
+    "Type": "pin;Button 8",
+    "Value": "11",
+    "Condition": "ENABLED_BUTTONS_COUNT>=8"
+  },
+  {
+    "Group": "Additional Buttons",
+    "Name": "BUTTON_PIN_9",
+    "Title": "9'th Additional button digital pin",
+    "DefaultValue": "3",
+    "Type": "pin;Button 9",
+    "Value": "12",
+    "Condition": "ENABLED_BUTTONS_COUNT>=9"
+  },
+  {
+    "Group": "Additional Buttons",
+    "Name": "BUTTON_PIN_10",
+    "Title": "10'th Additional button digital pin",
+    "DefaultValue": "3",
+    "Type": "pin;Button 10",
+    "Value": "13",
+    "Condition": "ENABLED_BUTTONS_COUNT>=10"
+  },
+  {
+    "Group": "Additional Buttons",
+    "Name": "BUTTON_PIN_11",
+    "Title": "11'th Additional button digital pin",
+    "DefaultValue": "3",
+    "Type": "pin;Button 11",
+    "Value": "14",
+    "Condition": "ENABLED_BUTTONS_COUNT>=11"
+  },
+  {
+    "Group": "Additional Buttons",
+    "Name": "BUTTON_PIN_12",
+    "Title": "12'th Additional button digital pin",
+    "DefaultValue": "3",
+    "Type": "pin;Button 12",
+    "Value": "15",
+    "Condition": "ENABLED_BUTTONS_COUNT>=12"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENABLED_ENCODERS_COUNT",
+    "Title": "Rotary encoders enabled",
+    "DefaultValue": "0",
+    "Type": "int",
+    "Value": "2",
+    "Max": 8
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER1_CLK_PIN",
+    "Title": "Encoder 1 output A (CLK) pin",
+    "DefaultValue": "7",
+    "Type": "pin;Encoder 1 CLK",
+    "Value": "14",
+    "Condition": "ENABLED_ENCODERS_COUNT>0"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER1_DT_PIN",
+    "Title": "Encoder 1 output B (DT) pin",
+    "DefaultValue": "8",
+    "Type": "pin;Encoder 1 DT",
+    "Value": "15",
+    "Condition": "ENABLED_ENCODERS_COUNT>0"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER1_BUTTON_PIN",
+    "Title": "Encoder 1 button (SW) pin",
+    "DefaultValue": "9",
+    "Type": "pin;Encoder 1 SWITCH",
+    "Value": "16",
+    "Condition": "ENABLED_ENCODERS_COUNT>0",
+    "Min": -1
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER1_REVERSE_DIRECTION",
+    "Title": "Encoder 1 reverse direction",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>0"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER1_ENABLE_PULLUP",
+    "Title": "Encoder 1 enable pullup resistor",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "1",
+    "Condition": "ENABLED_ENCODERS_COUNT>0"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER1_ENABLE_HALFSTEPS",
+    "Title": "Encoder 1 steps mode",
+    "DefaultValue": "0",
+    "Type": "list",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>=1",
+    "ListValues": "0,Full steps;1,Half steps"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER2_CLK_PIN",
+    "Title": "Encoder 2 output A (CLK) pin",
+    "DefaultValue": "11",
+    "Type": "pin;Encoder 2 CLK",
+    "Value": "19",
+    "Condition": "ENABLED_ENCODERS_COUNT>1"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER2_DT_PIN",
+    "Title": "Encoder 2 output B (DT) pin",
+    "DefaultValue": "12",
+    "Type": "pin;Encoder 2 DT",
+    "Value": "20",
+    "Condition": "ENABLED_ENCODERS_COUNT>1"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER2_BUTTON_PIN",
+    "Title": "Encoder 2 button (SW) pin",
+    "DefaultValue": "13",
+    "Type": "pin;Encoder 2 SWITCH",
+    "Value": "21",
+    "Condition": "ENABLED_ENCODERS_COUNT>1",
+    "Min": -1
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER2_ENABLE_PULLUP",
+    "Title": "Encoder 2 enable pullup resistor",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "1",
+    "Condition": "ENABLED_ENCODERS_COUNT>1"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER2_REVERSE_DIRECTION",
+    "Title": "Encoder 2 reverse direction",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>1"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER2_ENABLE_HALFSTEPS",
+    "Title": "Encoder 2 steps mode",
+    "DefaultValue": "0",
+    "Type": "list",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>=2",
+    "ListValues": "0,Full steps;1,Half steps"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER3_CLK_PIN",
+    "Title": "Encoder 3 output A (CLK) pin",
+    "DefaultValue": "7",
+    "Type": "pin;Encoder 3 CLK",
+    "Value": "7",
+    "Condition": "ENABLED_ENCODERS_COUNT>2"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER3_DT_PIN",
+    "Title": "Encoder 3 output B (DT) pin",
+    "DefaultValue": "8",
+    "Type": "pin;Encoder 3 DT",
+    "Value": "8",
+    "Condition": "ENABLED_ENCODERS_COUNT>2"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER3_BUTTON_PIN",
+    "Title": "Encoder 3 button (SW) pin",
+    "DefaultValue": "9",
+    "Type": "pin;Encoder 3 SWITCH",
+    "Value": "9",
+    "Condition": "ENABLED_ENCODERS_COUNT>2",
+    "Min": -1
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER3_ENABLE_PULLUP",
+    "Title": "Encoder 3 enable pullup resistor",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>2"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER3_REVERSE_DIRECTION",
+    "Title": "Encoder 3 reverse direction",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>2"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER3_ENABLE_HALFSTEPS",
+    "Title": "Encoder 3 steps mode",
+    "DefaultValue": "0",
+    "Type": "list",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>=3",
+    "ListValues": "0,Full steps;1,Half steps"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER4_CLK_PIN",
+    "Title": "Encoder 4 output A (CLK) pin",
+    "DefaultValue": "7",
+    "Type": "pin;Encoder 4 CLK",
+    "Value": "7",
+    "Condition": "ENABLED_ENCODERS_COUNT>3"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER4_DT_PIN",
+    "Title": "Encoder 4 output B (DT) pin",
+    "DefaultValue": "8",
+    "Type": "pin;Encoder 4 DT",
+    "Value": "8",
+    "Condition": "ENABLED_ENCODERS_COUNT>3"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER4_BUTTON_PIN",
+    "Title": "Encoder 4 button (SW) pin",
+    "DefaultValue": "9",
+    "Type": "pin;Encoder 4 SWITCH",
+    "Value": "9",
+    "Condition": "ENABLED_ENCODERS_COUNT>3",
+    "Min": -1
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER4_ENABLE_PULLUP",
+    "Title": "Encoder 4 enable pullup resistor",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>3"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER4_REVERSE_DIRECTION",
+    "Title": "Encoder 4 reverse direction",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>3"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER4_ENABLE_HALFSTEPS",
+    "Title": "Encoder 4 steps mode",
+    "DefaultValue": "0",
+    "Type": "list",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>=4",
+    "ListValues": "0,Full steps;1,Half steps"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER5_CLK_PIN",
+    "Title": "Encoder 5 output A (CLK) pin",
+    "DefaultValue": "7",
+    "Type": "pin;Encoder 5 CLK",
+    "Value": "7",
+    "Condition": "ENABLED_ENCODERS_COUNT>4"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER5_DT_PIN",
+    "Title": "Encoder 5 output B (DT) pin",
+    "DefaultValue": "8",
+    "Type": "pin;Encoder 5 DT",
+    "Value": "8",
+    "Condition": "ENABLED_ENCODERS_COUNT>4"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER5_BUTTON_PIN",
+    "Title": "Encoder 5 button (SW) pin",
+    "DefaultValue": "9",
+    "Type": "pin;Encoder 5 SWITCH",
+    "Value": "9",
+    "Condition": "ENABLED_ENCODERS_COUNT>4",
+    "Min": -1
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER5_ENABLE_PULLUP",
+    "Title": "Encoder 5 enable pullup resistor",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>4"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER5_REVERSE_DIRECTION",
+    "Title": "Encoder 5 reverse direction",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>4"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER5_ENABLE_HALFSTEPS",
+    "Title": "Encoder 5 steps mode",
+    "DefaultValue": "0",
+    "Type": "list",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>=5",
+    "ListValues": "0,Full steps;1,Half steps"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER6_CLK_PIN",
+    "Title": "Encoder 6 output A (CLK) pin",
+    "DefaultValue": "7",
+    "Type": "pin;Encoder 6 CLK",
+    "Value": "7",
+    "Condition": "ENABLED_ENCODERS_COUNT>5"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER6_DT_PIN",
+    "Title": "Encoder 6 output B (DT) pin",
+    "DefaultValue": "8",
+    "Type": "pin;Encoder 6 DT",
+    "Value": "8",
+    "Condition": "ENABLED_ENCODERS_COUNT>5"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER6_BUTTON_PIN",
+    "Title": "Encoder 6 button (SW) pin",
+    "DefaultValue": "9",
+    "Type": "pin;Encoder 6 SWITCH",
+    "Value": "9",
+    "Condition": "ENABLED_ENCODERS_COUNT>5",
+    "Min": -1
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER6_ENABLE_PULLUP",
+    "Title": "Encoder 6 enable pullup resistor",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>5"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER6_REVERSE_DIRECTION",
+    "Title": "Encoder 6 reverse direction",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>5"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER6_ENABLE_HALFSTEPS",
+    "Title": "Encoder 6 steps mode",
+    "DefaultValue": "0",
+    "Type": "list",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>=6",
+    "ListValues": "0,Full steps;1,Half steps"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER7_CLK_PIN",
+    "Title": "Encoder 7 output A (CLK) pin",
+    "DefaultValue": "7",
+    "Type": "pin;Encoder 7 CLK",
+    "Value": "7",
+    "Condition": "ENABLED_ENCODERS_COUNT>6"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER7_DT_PIN",
+    "Title": "Encoder 7 output B (DT) pin",
+    "DefaultValue": "8",
+    "Type": "pin;Encoder 7 DT",
+    "Value": "8",
+    "Condition": "ENABLED_ENCODERS_COUNT>6"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER7_BUTTON_PIN",
+    "Title": "Encoder 7 button (SW) pin",
+    "DefaultValue": "9",
+    "Type": "pin;Encoder 7 SWITCH",
+    "Value": "9",
+    "Condition": "ENABLED_ENCODERS_COUNT>6",
+    "Min": -1
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER7_ENABLE_PULLUP",
+    "Title": "Encoder 7 enable pullup resistor",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>6"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER7_REVERSE_DIRECTION",
+    "Title": "Encoder 7 reverse direction",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>6"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER7_ENABLE_HALFSTEPS",
+    "Title": "Encoder 7 steps mode",
+    "DefaultValue": "0",
+    "Type": "list",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>=7",
+    "ListValues": "0,Full steps;1,Half steps"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER8_CLK_PIN",
+    "Title": "Encoder 8 output A (CLK) pin",
+    "DefaultValue": "7",
+    "Type": "pin;Encoder 8 CLK",
+    "Value": "7",
+    "Condition": "ENABLED_ENCODERS_COUNT>7"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER8_DT_PIN",
+    "Title": "Encoder 8 output B (DT) pin",
+    "DefaultValue": "8",
+    "Type": "pin;Encoder 8 DT",
+    "Value": "8",
+    "Condition": "ENABLED_ENCODERS_COUNT>7"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER8_BUTTON_PIN",
+    "Title": "Encoder 8 button (SW) pin",
+    "DefaultValue": "9",
+    "Type": "pin;Encoder 8 SWITCH",
+    "Value": "9",
+    "Condition": "ENABLED_ENCODERS_COUNT>7",
+    "Min": -1
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER8_ENABLE_PULLUP",
+    "Title": "Encoder 8 enable pullup resistor",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>7"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER8_REVERSE_DIRECTION",
+    "Title": "Encoder 8 reverse direction",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>7"
+  },
+  {
+    "Group": "Rotary Encoders",
+    "Name": "ENCODER8_ENABLE_HALFSTEPS",
+    "Title": "Encoder 8 steps mode",
+    "DefaultValue": "0",
+    "Type": "list",
+    "Value": "0",
+    "Condition": "ENABLED_ENCODERS_COUNT>=8",
+    "ListValues": "0,Full steps;1,Half steps"
+  },
+  {
+    "Group": "Button matrix",
+    "Name": "ENABLED_BUTTONMATRIX",
+    "Title": "Button matrix enabled",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "1"
+  },
+  {
+    "Group": "Button matrix",
+    "Name": "BMATRIX_COLS",
+    "Title": "Columns",
+    "DefaultValue": "3",
+    "Type": "int",
+    "Value": "4",
+    "Condition": "ENABLED_BUTTONMATRIX>0",
+    "Min": 2,
+    "Max": 8
+  },
+  {
+    "Group": "Button matrix",
+    "Name": "BMATRIX_ROWS",
+    "Title": "Rows",
+    "DefaultValue": "3",
+    "Type": "int",
+    "Value": "3",
+    "Condition": "ENABLED_BUTTONMATRIX>0",
+    "Min": 2,
+    "Max": 8
+  },
+  {
+    "Group": "Button matrix",
+    "Name": "BMATRIX_COL1",
+    "Title": "Column 1 pin",
+    "DefaultValue": "2",
+    "Type": "pin;Button M. Col 1",
+    "Value": "2",
+    "Condition": "ENABLED_BUTTONMATRIX>0 && BMATRIX_COLS>=1"
+  },
+  {
+    "Group": "Button matrix",
+    "Name": "BMATRIX_COL2",
+    "Title": "Column 2 pin",
+    "DefaultValue": "3",
+    "Type": "pin;Button M. Col 2",
+    "Value": "3",
+    "Condition": "ENABLED_BUTTONMATRIX>0 && BMATRIX_COLS>=2"
+  },
+  {
+    "Group": "Button matrix",
+    "Name": "BMATRIX_COL3",
+    "Title": "Column 3 pin",
+    "DefaultValue": "4",
+    "Type": "pin;Button M. Col 3",
+    "Value": "4",
+    "Condition": "ENABLED_BUTTONMATRIX>0 && BMATRIX_COLS>=3"
+  },
+  {
+    "Group": "Button matrix",
+    "Name": "BMATRIX_COL4",
+    "Title": "Column 4 pin",
+    "DefaultValue": "5",
+    "Type": "pin;Button M. Col 4",
+    "Value": "5",
+    "Condition": "ENABLED_BUTTONMATRIX>0 && BMATRIX_COLS>=4"
+  },
+  {
+    "Group": "Button matrix",
+    "Name": "BMATRIX_COL5",
+    "Title": "Column 5 pin",
+    "DefaultValue": "2",
+    "Type": "pin;Button M. Col 5",
+    "Value": "2",
+    "Condition": "ENABLED_BUTTONMATRIX>0 && BMATRIX_COLS>=5"
+  },
+  {
+    "Group": "Button matrix",
+    "Name": "BMATRIX_COL6",
+    "Title": "Column 6 pin",
+    "DefaultValue": "2",
+    "Type": "pin;Button M. Col 6",
+    "Value": "2",
+    "Condition": "ENABLED_BUTTONMATRIX>0 && BMATRIX_COLS>=6"
+  },
+  {
+    "Group": "Button matrix",
+    "Name": "BMATRIX_COL7",
+    "Title": "Column 7 pin",
+    "DefaultValue": "2",
+    "Type": "pin;Button M. Col 7",
+    "Value": "2",
+    "Condition": "ENABLED_BUTTONMATRIX>0 && BMATRIX_COLS>=7"
+  },
+  {
+    "Group": "Button matrix",
+    "Name": "BMATRIX_COL8",
+    "Title": "Column 8 pin",
+    "DefaultValue": "2",
+    "Type": "pin;Button M. Col 8",
+    "Value": "2",
+    "Condition": "ENABLED_BUTTONMATRIX>0 && BMATRIX_COLS>=8"
+  },
+  {
+    "Group": "Button matrix",
+    "Name": "BMATRIX_ROW1",
+    "Title": "Row 1 pin",
+    "DefaultValue": "6",
+    "Type": "pin;Button M. Row 1",
+    "Value": "6",
+    "Condition": "ENABLED_BUTTONMATRIX>0 && BMATRIX_ROWS>=1"
+  },
+  {
+    "Group": "Button matrix",
+    "Name": "BMATRIX_ROW2",
+    "Title": "Row 2 pin",
+    "DefaultValue": "7",
+    "Type": "pin;Button M. Row 2",
+    "Value": "7",
+    "Condition": "ENABLED_BUTTONMATRIX>0 && BMATRIX_ROWS>=2"
+  },
+  {
+    "Group": "Button matrix",
+    "Name": "BMATRIX_ROW3",
+    "Title": "Row 3 pin",
+    "DefaultValue": "8",
+    "Type": "pin;Button M. Row 3",
+    "Value": "8",
+    "Condition": "ENABLED_BUTTONMATRIX>0 && BMATRIX_ROWS>=3"
+  },
+  {
+    "Group": "Button matrix",
+    "Name": "BMATRIX_ROW4",
+    "Title": "Row 4 pin",
+    "DefaultValue": "9",
+    "Type": "pin;Button M. Row 4",
+    "Value": "9",
+    "Condition": "ENABLED_BUTTONMATRIX>0 && BMATRIX_ROWS>=4"
+  },
+  {
+    "Group": "Button matrix",
+    "Name": "BMATRIX_ROW5",
+    "Title": "Row 5 pin",
+    "DefaultValue": "2",
+    "Type": "pin;Button M. Row 5",
+    "Value": "2",
+    "Condition": "ENABLED_BUTTONMATRIX>0 && BMATRIX_ROWS>=5"
+  },
+  {
+    "Group": "Button matrix",
+    "Name": "BMATRIX_ROW6",
+    "Title": "Row 6 pin",
+    "DefaultValue": "2",
+    "Type": "pin;Button M. Row 6",
+    "Value": "2",
+    "Condition": "ENABLED_BUTTONMATRIX>0 && BMATRIX_ROWS>=6"
+  },
+  {
+    "Group": "Button matrix",
+    "Name": "BMATRIX_ROW7",
+    "Title": "Row 7 pin",
+    "DefaultValue": "2",
+    "Type": "pin;Button M. Row 7",
+    "Value": "2",
+    "Condition": "ENABLED_BUTTONMATRIX>0 && BMATRIX_ROWS>=7"
+  },
+  {
+    "Group": "Button matrix",
+    "Name": "BMATRIX_ROW8",
+    "Title": "Row 8 pin",
+    "DefaultValue": "2",
+    "Type": "pin;Button M. Row 8",
+    "Value": "2",
+    "Condition": "ENABLED_BUTTONMATRIX>0 && BMATRIX_ROWS>=8"
+  },
+  {
+    "Group": "SHAKEIT Adafruit Motorshield V2",
+    "Name": "ADAMOTORS_SHIELDSCOUNT",
+    "Title": "Number of adadruit shields connected (up to 3)",
+    "DefaultValue": "0",
+    "Type": "int",
+    "Value": "0",
+    "Max": 3
+  },
+  {
+    "Group": "SHAKEIT Adafruit Motorshield V2",
+    "Name": "ADAMOTORS_FREQ",
+    "Title": "PWM Frequency of the board (1900hz max)",
+    "DefaultValue": "1900",
+    "Type": "int",
+    "Value": "1900",
+    "Condition": "ADAMOTORS_SHIELDSCOUNT>0",
+    "Min": 10,
+    "Max": 1900
+  },
+  {
+    "Group": "SHAKEIT MotoMonster Board",
+    "Name": "MOTOMONSTER_ENABLED",
+    "Title": "Moto Monster board enabled",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0"
+  },
+  {
+    "Group": "SHAKEIT MotoMonster Board",
+    "Name": "MOTOMONSTER_REVERSEDIRECTION",
+    "Title": "Direction ",
+    "DefaultValue": "0",
+    "Type": "list",
+    "Value": "0",
+    "Condition": "MOTOMONSTER_ENABLED>0",
+    "ListValues": "0,Clockwise;1,Counter clockwise"
+  },
+  {
+    "Group": "SHAKEIT DK Motor Shield",
+    "Name": "DKMOTOR_SHIELDSCOUNT",
+    "Title": "DK shield enabled",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0"
+  },
+  {
+    "Group": "SHAKEIT DK Motor Shield",
+    "Name": "DKMOTOR_USEHUMMINGREDUCING",
+    "Title": "Change the pwm frequency to reduce humming (uno only), may strongly reduce power",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Condition": "DKMOTOR_SHIELDSCOUNT > 0"
+  },
+  {
+    "Group": "SHAKEIT L298N Motors Board",
+    "Name": "L98NMOTORS_ENABLED",
+    "Title": "L298N motor board enabled",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0"
+  },
+  {
+    "Group": "SHAKEIT L298N Motors Board",
+    "Name": "L98N_enA",
+    "Title": "ENA PWM pin",
+    "DefaultValue": "10",
+    "Type": "pin;L298N ENA",
+    "Value": "10",
+    "Condition": "L98NMOTORS_ENABLED>=1"
+  },
+  {
+    "Group": "SHAKEIT L298N Motors Board",
+    "Name": "L98N_in1",
+    "Title": "IN1 digital pin",
+    "DefaultValue": "9",
+    "Type": "pin;L298N IN1",
+    "Value": "9",
+    "Condition": "L98NMOTORS_ENABLED>=1"
+  },
+  {
+    "Group": "SHAKEIT L298N Motors Board",
+    "Name": "L98N_in2",
+    "Title": "IN2 digital pin",
+    "DefaultValue": "8",
+    "Type": "pin;L298N IN2",
+    "Value": "8",
+    "Condition": "L98NMOTORS_ENABLED>=1"
+  },
+  {
+    "Group": "SHAKEIT L298N Motors Board",
+    "Name": "L98N_enB",
+    "Title": "ENB PWM pin",
+    "DefaultValue": "5",
+    "Type": "pin;L298N ENB",
+    "Value": "5",
+    "Condition": "L98NMOTORS_ENABLED>=1"
+  },
+  {
+    "Group": "SHAKEIT L298N Motors Board",
+    "Name": "L98N_in3",
+    "Title": "IN3 digital pin",
+    "DefaultValue": "7",
+    "Type": "pin;L298N IN3",
+    "Value": "7",
+    "Condition": "L98NMOTORS_ENABLED>=1"
+  },
+  {
+    "Group": "SHAKEIT L298N Motors Board",
+    "Name": "L98N_in4",
+    "Title": "IN4 digital pin",
+    "DefaultValue": "6",
+    "Type": "pin;L298N IN4",
+    "Value": "6",
+    "Condition": "L98NMOTORS_ENABLED>=1"
+  },
+  {
+    "Group": "SHAKEIT PWM Outputs",
+    "Name": "SHAKEITPWM_ENABLED_MOTORS",
+    "Title": "ShakeIT direct PWM outputs enabled, for fans, TIP120 or any PWM driven custom boards",
+    "DefaultValue": "0",
+    "Type": "int",
+    "Value": "0",
+    "Max": 4
+  },
+  {
+    "Group": "SHAKEIT PWM Outputs",
+    "Name": "SHAKEITPWM_O1",
+    "Title": "PWM Output 1 pin",
+    "DefaultValue": "5",
+    "Type": "pin;ShakeIt PWM 1",
+    "Value": "5",
+    "Condition": "SHAKEITPWM_ENABLED_MOTORS>=1"
+  },
+  {
+    "Group": "SHAKEIT PWM Outputs",
+    "Name": "SHAKEITPWM_MIN_OUTPUT_O1",
+    "Title": "PWM Output 1 min (lower values will disable output)",
+    "DefaultValue": "0",
+    "Type": "int",
+    "Value": "0",
+    "Condition": "SHAKEITPWM_ENABLED_MOTORS>=1",
+    "Max": 255
+  },
+  {
+    "Group": "SHAKEIT PWM Outputs",
+    "Name": "SHAKEITPWM_MAX_OUTPUT_O1",
+    "Title": "PWM Output 1 max",
+    "DefaultValue": "255",
+    "Type": "int",
+    "Value": "255",
+    "Condition": "SHAKEITPWM_ENABLED_MOTORS>=1",
+    "Max": 255
+  },
+  {
+    "Group": "SHAKEIT PWM Outputs",
+    "Name": "SHAKEITPWM_O2",
+    "Title": "PWM Output 2 pin",
+    "DefaultValue": "6",
+    "Type": "pin;ShakeIt PWM 2",
+    "Value": "6",
+    "Condition": "SHAKEITPWM_ENABLED_MOTORS>=2"
+  },
+  {
+    "Group": "SHAKEIT PWM Outputs",
+    "Name": "SHAKEITPWM_MIN_OUTPUT_O2",
+    "Title": "PWM Output 2 min (lower values will disable output)",
+    "DefaultValue": "0",
+    "Type": "int",
+    "Value": "0",
+    "Condition": "SHAKEITPWM_ENABLED_MOTORS>=2",
+    "Max": 255
+  },
+  {
+    "Group": "SHAKEIT PWM Outputs",
+    "Name": "SHAKEITPWM_MAX_OUTPUT_O2",
+    "Title": "PWM Output 2 max",
+    "DefaultValue": "255",
+    "Type": "int",
+    "Value": "255",
+    "Condition": "SHAKEITPWM_ENABLED_MOTORS>=2",
+    "Max": 255
+  },
+  {
+    "Group": "SHAKEIT PWM Outputs",
+    "Name": "SHAKEITPWM_O3",
+    "Title": "PWM Output 3 pin",
+    "DefaultValue": "9",
+    "Type": "pin;ShakeIt PWM 3",
+    "Value": "9",
+    "Condition": "SHAKEITPWM_ENABLED_MOTORS>=3"
+  },
+  {
+    "Group": "SHAKEIT PWM Outputs",
+    "Name": "SHAKEITPWM_MIN_OUTPUT_O3",
+    "Title": "PWM Output 3 min (lower values will disable output)",
+    "DefaultValue": "0",
+    "Type": "int",
+    "Value": "0",
+    "Condition": "SHAKEITPWM_ENABLED_MOTORS>=3",
+    "Max": 255
+  },
+  {
+    "Group": "SHAKEIT PWM Outputs",
+    "Name": "SHAKEITPWM_MAX_OUTPUT_O3",
+    "Title": "PWM Output 3 max",
+    "DefaultValue": "255",
+    "Type": "int",
+    "Value": "255",
+    "Condition": "SHAKEITPWM_ENABLED_MOTORS>=3",
+    "Max": 255
+  },
+  {
+    "Group": "SHAKEIT PWM Outputs",
+    "Name": "SHAKEITPWM_O4",
+    "Title": "PWM Output 4 pin",
+    "DefaultValue": "10",
+    "Type": "pin;ShakeIt PWM 4",
+    "Value": "10",
+    "Condition": "SHAKEITPWM_ENABLED_MOTORS>=4"
+  },
+  {
+    "Group": "SHAKEIT PWM Outputs",
+    "Name": "SHAKEITPWM_MIN_OUTPUT_O4",
+    "Title": "PWM Output 4 min (lower values will disable output)",
+    "DefaultValue": "0",
+    "Type": "int",
+    "Value": "0",
+    "Condition": "SHAKEITPWM_ENABLED_MOTORS>=4",
+    "Max": 255
+  },
+  {
+    "Group": "SHAKEIT PWM Outputs",
+    "Name": "SHAKEITPWM_MAX_OUTPUT_O4",
+    "Title": "PWM Output 4 max",
+    "DefaultValue": "255",
+    "Type": "int",
+    "Value": "255",
+    "Condition": "SHAKEITPWM_ENABLED_MOTORS>=4",
+    "Max": 255
+  },
+  {
+    "Group": "SHAKEIT PWM FANS Outputs",
+    "Name": "SHAKEITPWMFANS_ENABLED_MOTORS",
+    "Title": "ShakeIT direct PWM fans enabled (25khz PWM)\r\nArduino Uno : pins 9 or 10\r\nArduino Leonardo pins : 9, 10 or 11\r\nArduino Mega pins : 11, 12 or 13",
+    "DefaultValue": "0",
+    "Type": "int",
+    "Value": "0",
+    "Max": 3
+  },
+  {
+    "Group": "SHAKEIT PWM FANS Outputs",
+    "Name": "SHAKEITPWMFANS_O1",
+    "Title": "PWM Output 1 pin",
+    "DefaultValue": "9",
+    "Type": "pin;ShakeIt PWM Fan 1",
+    "Value": "9",
+    "Condition": "SHAKEITPWMFANS_ENABLED_MOTORS>=1"
+  },
+  {
+    "Group": "SHAKEIT PWM FANS Outputs",
+    "Name": "SHAKEITPWMFANS_MIN_OUTPUT_O1",
+    "Title": "PWM Output 1 min (lower values will disable output)",
+    "DefaultValue": "0",
+    "Type": "int",
+    "Value": "0",
+    "Condition": "SHAKEITPWMFANS_ENABLED_MOTORS>=1",
+    "Max": 255
+  },
+  {
+    "Group": "SHAKEIT PWM FANS Outputs",
+    "Name": "SHAKEITPWMFANS_MAX_OUTPUT_O1",
+    "Title": "PWM Output 1 max",
+    "DefaultValue": "255",
+    "Type": "int",
+    "Value": "255",
+    "Condition": "SHAKEITPWMFANS_ENABLED_MOTORS>=1",
+    "Max": 255
+  },
+  {
+    "Group": "SHAKEIT PWM FANS Outputs",
+    "Name": "SHAKEITPWMFANS_O2",
+    "Title": "PWM Output 2 pin",
+    "DefaultValue": "10",
+    "Type": "pin;ShakeIt PWM Fan 2",
+    "Value": "10",
+    "Condition": "SHAKEITPWMFANS_ENABLED_MOTORS>=2"
+  },
+  {
+    "Group": "SHAKEIT PWM FANS Outputs",
+    "Name": "SHAKEITPWMFANS_MIN_OUTPUT_O2",
+    "Title": "PWM Output 2 min (lower values will disable output)",
+    "DefaultValue": "0",
+    "Type": "int",
+    "Value": "0",
+    "Condition": "SHAKEITPWMFANS_ENABLED_MOTORS>=2",
+    "Max": 255
+  },
+  {
+    "Group": "SHAKEIT PWM FANS Outputs",
+    "Name": "SHAKEITPWMFANS_MAX_OUTPUT_O2",
+    "Title": "PWM Output 2 max",
+    "DefaultValue": "255",
+    "Type": "int",
+    "Value": "255",
+    "Condition": "SHAKEITPWMFANS_ENABLED_MOTORS>=2",
+    "Max": 255
+  },
+  {
+    "Group": "SHAKEIT PWM FANS Outputs",
+    "Name": "SHAKEITPWMFANS_O3",
+    "Title": "PWM Output 3 pin",
+    "DefaultValue": "11",
+    "Type": "pin;ShakeIt PWM Fan 3",
+    "Value": "11",
+    "Condition": "SHAKEITPWMFANS_ENABLED_MOTORS>=3"
+  },
+  {
+    "Group": "SHAKEIT PWM FANS Outputs",
+    "Name": "SHAKEITPWMFANS_MIN_OUTPUT_O3",
+    "Title": "PWM Output 3 min (lower values will disable output)",
+    "DefaultValue": "0",
+    "Type": "int",
+    "Value": "0",
+    "Condition": "SHAKEITPWMFANS_ENABLED_MOTORS>=3",
+    "Max": 255
+  },
+  {
+    "Group": "SHAKEIT PWM FANS Outputs",
+    "Name": "SHAKEITPWMFANS_MAX_OUTPUT_O3",
+    "Title": "PWM Output 3 max",
+    "DefaultValue": "255",
+    "Type": "int",
+    "Value": "255",
+    "Condition": "SHAKEITPWMFANS_ENABLED_MOTORS>=3",
+    "Max": 255
+  },
+  {
+    "Group": "SHAKEIT PWM FANS Outputs",
+    "Name": "SHAKEITPWMFANS_O4",
+    "Title": "PWM Output 4 pin",
+    "DefaultValue": "10",
+    "Type": "pin;ShakeIt PWM Fan 4",
+    "Value": "10",
+    "Condition": "SHAKEITPWMFANS_ENABLED_MOTORS>=4"
+  },
+  {
+    "Group": "SHAKEIT PWM FANS Outputs",
+    "Name": "SHAKEITPWMFANS_MIN_OUTPUT_O4",
+    "Title": "PWM Output 4 min (lower values will disable output)",
+    "DefaultValue": "0",
+    "Type": "int",
+    "Value": "0",
+    "Condition": "SHAKEITPWMFANS_ENABLED_MOTORS>=4",
+    "Max": 255
+  },
+  {
+    "Group": "SHAKEIT PWM FANS Outputs",
+    "Name": "SHAKEITPWMFANS_MAX_OUTPUT_O4",
+    "Title": "PWM Output 4 max",
+    "DefaultValue": "255",
+    "Type": "int",
+    "Value": "255",
+    "Condition": "SHAKEITPWMFANS_ENABLED_MOTORS>=4",
+    "Max": 255
+  },
+  {
+    "Group": "Oled GLCD",
+    "Name": "ENABLED_OLEDLCD",
+    "Title": "OLED LCD enabled",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Pins": "nano:18,OLED LCD SDA;19,OLED LCD SCK|uno:18,OLED LCD SDA;19,OLED LCD SCK|micro:2,OLED LCD SDA;3,OLED LCD SCK"
+  },
+  {
+    "Group": "Nokia GLCD",
+    "Name": "ENABLED_NOKIALCD",
+    "Title": "Nokia LCD enabled",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0",
+    "Max": 2
+  },
+  {
+    "Group": "74HC595 Gear Display",
+    "Name": "ENABLE_74HC595_GEAR_DISPLAY",
+    "Title": "74HC595 gear display enabled",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0"
+  },
+  {
+    "Group": "74HC595 Gear Display",
+    "Name": "RS_74HC595_DATAPIN",
+    "Title": "DATA digital pin number",
+    "DefaultValue": "2",
+    "Type": "pin",
+    "Value": "2",
+    "Condition": "ENABLE_74HC595_GEAR_DISPLAY >0"
+  },
+  {
+    "Group": "74HC595 Gear Display",
+    "Name": "RS_74HC595_LATCHPIN",
+    "Title": "LATCH digital pin number",
+    "DefaultValue": "3",
+    "Type": "pin",
+    "Value": "3",
+    "Condition": "ENABLE_74HC595_GEAR_DISPLAY > 0"
+  },
+  {
+    "Group": "74HC595 Gear Display",
+    "Name": "RS_74HC595_CLOCKPIN",
+    "Title": "CLOCK digital pin number",
+    "DefaultValue": "4",
+    "Type": "pin",
+    "Value": "4",
+    "Condition": "ENABLE_74HC595_GEAR_DISPLAY > 0"
+  },
+  {
+    "Group": "6c595 Gear Display",
+    "Name": "ENABLE_6C595_GEAR_DISPLAY",
+    "Title": "6C595 gear display enabled",
+    "DefaultValue": "0",
+    "Type": "bool",
+    "Value": "0"
+  },
+  {
+    "Group": "6c595 Gear Display",
+    "Name": "RS_6c595_DATAPIN",
+    "Title": "DATA digital pin number, can't be changed !",
+    "DefaultValue": "11",
+    "Type": "pin",
+    "Value": "11",
+    "Condition": "ENABLE_6C595_GEAR_DISPLAY>0"
+  },
+  {
+    "Group": "6c595 Gear Display",
+    "Name": "RS_6c595_LATCHPIN",
+    "Title": "LATCH digital pin number, can't be changed !",
+    "DefaultValue": "13",
+    "Type": "pin",
+    "Value": "13",
+    "Condition": "ENABLE_6C595_GEAR_DISPLAY>0"
+  },
+  {
+    "Group": "6c595 Gear Display",
+    "Name": "RS_6c595_SLAVEPIN",
+    "Title": "SLAVE digital pin number",
+    "DefaultValue": "10",
+    "Type": "pin",
+    "Value": "10",
+    "Condition": "ENABLE_6C595_GEAR_DISPLAY>0"
+  }
+]
